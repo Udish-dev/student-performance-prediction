@@ -55,3 +55,18 @@ MAE measures average absolute prediction error in grade points. R² is not perce
 ## Project Status
 
 Initial model training and evaluation completed. Further validation and deployment are pending.
+
+### Cross-Validation Results
+
+Both Random Forest Regressor and Linear Regression were evaluated using 5-fold cross-validation on the training data. The experiment excluded the previous-period grades (`G1` and `G2`) to assess prediction using the remaining features.
+
+| Model | Mean CV MAE | Standard Deviation |
+|---|---:|---:|
+| Random Forest Regressor | 2.023 | 0.093 |
+| Linear Regression | 2.046 | 0.181 |
+
+**Interpretation:** Random Forest achieved a slightly lower mean cross-validation MAE, while also showing lower fold-to-fold variation in this experiment. However, the difference in mean MAE was small, so these results do not establish a decisive performance advantage for either model.
+
+**Limitations:** Results are based on the UCI Student Performance dataset and should not be generalized to Indian college students without further validation. Cross-validation scores represent training-data evaluation, not final test-set performance.
+
+**Evaluation metric:** Mean Absolute Error (MAE), measured in grade points. Lower values indicate predictions closer to the actual grades on average.
