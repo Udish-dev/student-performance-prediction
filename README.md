@@ -70,3 +70,18 @@ Both Random Forest Regressor and Linear Regression were evaluated using 5-fold c
 **Limitations:** Results are based on the UCI Student Performance dataset and should not be generalized to Indian college students without further validation. Cross-validation scores represent training-data evaluation, not final test-set performance.
 
 **Evaluation metric:** Mean Absolute Error (MAE), measured in grade points. Lower values indicate predictions closer to the actual grades on average.
+
+### Final Test-Set Evaluation
+
+The models were evaluated on a held-out test set containing 130 records. Previous-period grades (`G1` and `G2`) were excluded from the input features.
+
+| Model | MAE | R² |
+|---|---:|---:|
+| Linear Regression | 2.156 | 0.160 |
+| Random Forest Regressor | 2.040 | 0.188 |
+
+**Result:** Random Forest achieved a slightly lower MAE and a slightly higher R² than Linear Regression on the held-out test set.
+
+**Interpretation:** The Random Forest model's predictions differed from actual grades by approximately 2.04 grade points on average. Its R² of 0.188 indicates limited explanatory performance on this test set; it does not represent prediction accuracy.
+
+**Limitations:** This experiment uses the UCI Student Performance dataset, which describes Portuguese secondary-school students. The results should not be generalized to Indian college students without external validation.
